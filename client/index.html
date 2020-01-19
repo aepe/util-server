@@ -1,0 +1,52 @@
+<!--
+ * @abstract: JianJie
+ * @version: 0.0.1
+ * @Author: bhabgs
+ * @Date: 2020-01-19 15:08:37
+ * @LastEditors  : bhabgs
+ * @LastEditTime : 2020-01-19 16:59:29
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    />
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <title>工厂工具集合</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <img src="./images/logo.png" alt="" srcset="" />
+        <div>
+          {{cName}}
+          <el-button icon="el-icon-user" circle></el-button>
+        </div>
+      </header>
+      <div class="body">
+        <el-row :gutter="24">
+          <el-col :span="2" v-for="i in list">
+            <el-card shadow="hover">
+              <a :href="i.url" target="view_window">
+                <img :src="`./images/${i.pic}.png`" width="50" height="50" />
+                {{i.name}}
+              </a>
+              <el-button type="text">编辑</el-button>
+            </el-card>
+          </el-col>
+        </el-row>
+      </div>
+      <template src="./header.html"></template>
+    </div>
+  </body>
+  <script src="./scripts/index.js"></script>
+</html>
